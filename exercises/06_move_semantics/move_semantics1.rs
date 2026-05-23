@@ -1,11 +1,13 @@
 // TODO: 修改这个函数中的编译器错误。
 fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
-    let vec = vec;
+    let mut vec = vec;
 
     vec.push(88);
 
     vec
 }
+// 推荐在实际项目中优先使用 参数加 mut 的方式，减少不必要的变量绑定。
+// fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
 
 fn main() {
     // (可选)你可以选择性地在此处进行试验。
