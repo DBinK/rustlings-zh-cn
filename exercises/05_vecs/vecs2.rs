@@ -4,6 +4,7 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
     for element in input {
         // TODO: 将 `input` 切片中的每个都元素乘以2，
         // 并将其添加(push)到 `output` 动态数组中。
+        output.push(element*2);
     }
 
     output
@@ -32,13 +33,16 @@ fn vec_map(input: &[i32]) -> Vec<i32> {
     input
         .iter()
         .map(|element| {
-            // ???
+            element * 2
         })
         .collect()
 }
 
 fn main() {
     // (可选)你可以选择性地在此处进行试验。
+    let out = vec_loop(&[2, 3, 5]);
+    // println!("{:?}", out);
+    dbg!(out);
 }
 
 #[cfg(test)]
