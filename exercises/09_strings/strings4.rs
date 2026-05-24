@@ -13,25 +13,25 @@ fn string(arg: String) {
 // 你的任务是根据你认为每个值的类型，将 `placeholder(…)` 替换为 `string_slice(…)` 
 // 或者 `string(…)`。 
 fn main() {
-    placeholder("blue");
+    string_slice("blue");  // "blue" 是字符串字面量，类型为 &str
 
-    placeholder("red".to_string());
+    string("red".to_string());  // "red".to_string() 创建 String 类型
 
-    placeholder(String::from("hi"));
+    string(String::from("hi"));  // String::from("hi") 返回 String 类型
 
-    placeholder("rust is fun!".to_owned());
+    string("rust is fun!".to_owned());  // to_owned() 将 &str 转换为 String
 
-    placeholder("nice weather".into());
+    string("nice weather".into());  // into() 将 &str 转换为 String（通过 Into<String> trait）
 
-    placeholder(format!("Interpolation {}", "Station"));
+    string(format!("Interpolation {}", "Station"));  // format! 宏返回 String 类型
 
     // WARNING: This is byte indexing, not character indexing.
     // Character indexing can be done using `s.chars().nth(INDEX)`.
-    placeholder(&String::from("abc")[0..1]);
+    string_slice(&String::from("abc")[0..1]);  // [0..1] 切片操作产生 &str 类型
 
-    placeholder("  hello there ".trim());
+    string_slice("  hello there ".trim());  // trim() 方法返回 &str 类型
 
-    placeholder("Happy Monday!".replace("Mon", "Tues"));
+    string("Happy Monday!".replace("Mon", "Tues"));  // replace() 方法返回 String 类型
 
-    placeholder("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());  // to_lowercase() 方法返回 String 类型
 }
