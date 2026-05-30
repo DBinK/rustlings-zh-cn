@@ -29,6 +29,27 @@ mod my_module {
 
     // TODO: 按照上述要求实现该函数。
     // pub fn transformer(input: ???) -> ??? { ??? }
+    pub fn transformer(input: Vec<(String, Command)>) -> Vec<String> {
+        
+        // let mut output: Vec<String> = Vec::new();
+        let mut output: Vec<String> = Vec::with_capacity(input.len());
+
+        for (mut text, cmd) in input {
+            let result = match cmd {
+                Command::Uppercase => text.to_uppercase(),
+                Command::Trim => text.trim().to_string(),
+                Command::Append(count) => {
+                    for _ in 0..count {
+                        text.push_str("bar");
+                    }
+                    text
+                }
+            };
+            output.push(result);
+        }
+        output
+
+    }
 }
 
 fn main() {
@@ -40,10 +61,11 @@ mod tests {
     // TODO: 我们需要引入什么才能使 `transformer` 在作用域内可用呢?
     // use ???;
     use super::Command;
+    use super::my_module::transformer;
 
     #[test]
     fn it_works() {
-        let input = vec![
+        let input: Vec<(String, Command)> = vec![
             ("hello".to_string(), Command::Uppercase),
             (" all roads lead to rome! ".to_string(), Command::Trim),
             ("foo".to_string(), Command::Append(1)),
