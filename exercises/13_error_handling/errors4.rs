@@ -11,7 +11,22 @@ impl PositiveNonzeroInteger {
     fn new(value: i64) -> Result<Self, CreationError> {
         // TODO: 此函数不应该总是返回 `Ok`.
         // 阅读下面的测试用例以明确应返回的内容。
-        Ok(Self(value as u64))
+        if value < 0 {
+            Err(CreationError::Negative)
+        } else if value == 0 {
+            Err(CreationError::Zero)
+        } else {
+            Ok(Self(value as u64))
+        }
+
+        // 官方答案
+        // use std::cmp::Ordering;
+        // match value.cmp(&0) {
+        //     Ordering::Less => Err(CreationError::Negative),
+        //     Ordering::Equal => Err(CreationError::Zero),
+        //     Ordering::Greater => Ok(Self(value as u64)),
+        // }
+
     }
 }
 
