@@ -8,17 +8,21 @@
 // 并且需要能够打印这两种类型的成绩单！
 //
 // 请在 `ReportCard` 结构体以及其实现块(impl block)中进行必要的代码修改，
-// 使得除了支持数字成绩的成绩单之外，还能支持字母成绩的成绩单。 
+// 使得除了支持数字成绩的成绩单之外，还能支持字母成绩的成绩单。
+
+use std::fmt::Display;
 
 // TODO: 按照上述描述调整结构体。
-struct ReportCard {
-    grade: f32,
+struct ReportCard<T> {
+    // grade: f32,
+    grade: T,
     student_name: String,
     student_age: u8,
 }
 
 // TODO: 按照上述描述调整实现块(impl block)。
-impl ReportCard {
+impl<T: Display> ReportCard<T> {  // 为了能够打印成绩，必须实现`Display(显示)`特征(trait)。
+    //  ^^^^^^^ 要求泛型 `T` 实现了 `Display`。
     fn print(&self) -> String {
         format!(
             "{} ({}) - 取得的成绩为 {}",
@@ -26,6 +30,7 @@ impl ReportCard {
         )
     }
 }
+
 
 fn main() {
     // (可选)你可以选择性地在此处进行试验。
