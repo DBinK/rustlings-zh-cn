@@ -10,8 +10,9 @@ struct OtherSoftware;
 impl Licensed for SomeSoftware {}
 impl Licensed for OtherSoftware {}
 
-// TODO: 通过修改此函数的签名来修复编译器错误。
-fn compare_license_types(software1: ???, software2: ???) -> bool {
+// TODO: 通过修改此函数的签名来修复编译器错误。  
+fn compare_license_types(software1: impl Licensed, software2: impl Licensed) -> bool {  // impl Trait 语法，用来表示"某个实现了 Licensed trait 的类型，但我不想指名具体是哪个类型"。
+// fn compare_license_types<T1: Licensed, T2: Licensed>(software1: T1, software2: T2) -> bool {  // 等价实现
     software1.licensing_info() == software2.licensing_info()
 }
 

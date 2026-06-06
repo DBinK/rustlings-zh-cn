@@ -5,6 +5,12 @@ trait AppendBar {
 
 impl AppendBar for String {
     // TODO: 为 `String` 类型实现 `AppendBar` 。
+    fn append_bar(mut self) -> Self {
+        self.push_str("Bar");
+        self
+        
+        // self + "Bar"  // 更简洁的实现, "拼接"新字符串, 不需要 mut 
+    }
 }
 
 fn main() {
