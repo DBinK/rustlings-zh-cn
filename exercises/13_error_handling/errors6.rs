@@ -24,11 +24,10 @@ impl ParsePosNonzeroError {
 
     // TODO: 在此处添加另一个错误转换(error conversion)函数。
     // fn from_parse_int(???) -> Self { ??? }
-    fn from_parse_int(err: ParseIntError) -> Self { 
+    fn from_parse_int(err: ParseIntError) -> Self {
         Self::ParseInt(err)
     }
 }
-
 #[derive(PartialEq, Debug)]
 struct PositiveNonzeroInteger(u64);
 
