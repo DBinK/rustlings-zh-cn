@@ -1,11 +1,12 @@
 # 翻译同步追踪
 
 - 最后同步的上游提交：[1b4e590e2991](https://github.com/rust-lang/rustlings/commit/1b4e590e2991ab8698692d29a48390a8f247bb2c)（commit-hash.txt）
-- 上游最新提交：[a650509c789d](https://github.com/rust-lang/rustlings/commit/a650509c789da1656f813392b16aa1fa043b7f3e)
-- 待同步的翻译相关提交（14 个）：
+- 上游最新提交：[bc8e51115c93](https://github.com/rust-lang/rustlings/commit/bc8e51115c9304fbd036f5d6fca683e71363468f)
+- 待同步的翻译相关提交（15 个）：
 
 | Commit | 标题 | 时间 |
 | --- | --- | --- |
+| [3dfced8](https://github.com/rust-lang/rustlings/commit/3dfced8) | modules2: obey name convention for reexported consts | 2026-09-28 |
 | [ca9b2b8](https://github.com/rust-lang/rustlings/commit/ca9b2b8) | run exercises with CWD set to their directory | 2026-08-10 |
 | [d0109d6](https://github.com/rust-lang/rustlings/commit/d0109d6) | move input files into exercise directory | 2026-08-09 |
 | [b50eafb](https://github.com/rust-lang/rustlings/commit/b50eafb) | omit tokio feature "rt", "rt-multi-thread" activates it | 2026-08-09 |
